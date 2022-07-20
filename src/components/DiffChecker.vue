@@ -80,13 +80,13 @@ export default class DiffChecker extends Vue {
   diff: Diff[] = []
 
   async mounted(): Promise<void> {
-    await fetch('.env.first')
+    await fetch('first.txt')
       .then(response => response.text())
       .then((response) => {
         this.firstInput = response;
       })
 
-    await fetch('.env.second')
+    await fetch('second.txt')
       .then(response => response.text())
       .then((response) => {
         this.secondInput = response;
